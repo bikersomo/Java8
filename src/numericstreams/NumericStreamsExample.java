@@ -1,0 +1,29 @@
+package numericstreams;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.IntStream;
+
+public class NumericStreamsExample {
+
+	public static int sumOfNumbers(List<Integer>integerList) {
+		return integerList.stream().reduce(0,(x,y)->x+y);
+	}
+	
+	public static int sumOfNumbersUsingStreams() {
+
+		return IntStream.rangeClosed(1, 6)// includes 6 ie from 1 to 6 , range() will exclude 6 ie 1 to 5
+				.sum();
+				
+	}
+	
+	public static void main(String[] args) {
+
+		List<Integer>integerList= Arrays.asList(1,2,3,4,5,6);
+		
+		System.out.println("Sum of numbersn  + "+sumOfNumbers(integerList));
+		System.out.println("Sum of numberusingNumnericStreams  + "+sumOfNumbersUsingStreams());
+		
+	}
+
+}
